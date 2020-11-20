@@ -12,11 +12,11 @@ class App extends React.Component{
     books: []
   }
   componentDidMount() {
-    axios.get(`http://localhost:3000/books`)
-      .then(res => {
-        const books = res.data;
-        console.log(books)
-        this.setState({ books });
+    axios.get(`https://cors-anywhere.herokuapp.com/http://ec2-54-90-244-6.compute-1.amazonaws.com/allbooks?page=39`)
+    .then(res => {
+      const books = res.data;
+      console.log(books)
+      this.setState({ books });
       })
   }
   renderBooks() {
